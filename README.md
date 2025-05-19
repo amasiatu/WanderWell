@@ -1,1 +1,1 @@
-# expedia-extended
+# ExpediaExtended
