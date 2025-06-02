@@ -23,6 +23,7 @@ def fetch_countries():
             capital = ", ".join(country.get("capital", []))
             region = country.get("region", "Unknown")
             image_url = f"https://flagcdn.com/w320/{code.lower()}.png"  # flag image
+            times_visited = 0
 
             # Create simplified structure
             countries.append({
@@ -42,7 +43,8 @@ def fetch_countries():
                 },
                 "tourist_attractions": [],
                 "transport_friendly": True,
-                "image_url": image_url
+                "image_url": image_url,
+                "times_visited": times_visited
             })
         except Exception as e:
             print(f"Error processing {country.get('name', {}).get('common', 'unknown')}: {e}")
