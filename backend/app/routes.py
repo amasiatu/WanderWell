@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-DATA_PATH = 'data/countries.json'
+DATA_PATH = '../data/countries.json'
 
 # Load country data from JSON file
 def load_countries():
@@ -40,18 +40,7 @@ def home():
     elif sort_method == 'popular':
         filtered.sort(key=lambda x: x.get('times_visited', 0), reverse=True)
 
-    return render_template('index.html', countries=filtered, sort=sort_method, filter=filter_type)
-
-
-    #return {
-    #    'Name':"Asha", 
-    #   "Age":"20",
-    #   "Date":'5/28/25', 
-    #    "Major":"History",
-    #    "Travel Habits": "Often, 2-3 times a year"
-    #    }
-
-# need country, map, and home(index) .html files
+    return jsonify(filtered)
 
 @app.route('/country/<country_code>')
 def country_page(country_code):
@@ -64,10 +53,10 @@ def country_page(country_code):
             country["times_visited"] = country.get("times_visited", 0) + 1
             save_countries(countries)
             found = True
-            return render_template('country.html', country=country)
+            return jsonify(country)
 
     if not found:
-        return "Country not found", 404
+        return jsonify({"error": "Country not found"}), 404
 
 
 @app.route('/map')
@@ -75,5 +64,5 @@ def map_page():
     return render_template('map.html', countries=countries)
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=5001)
+    app.run(debug=True, host="0.0.0.0", port=5000)
     
