@@ -1,10 +1,15 @@
+import requests
 from flask import Flask, jsonify, render_template, request, redirect, url_for
 from flask_cors import CORS
 import json
+from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
 CORS(app)
+
+load_dotenv()
+UNSPLASH_ACCESS_KEY = os.environ.get('UNSPLASH_ACCESS_KEY')
 
 DATA_PATH = '../data/countries.json'
 
@@ -18,13 +23,39 @@ def save_countries(data):
     with open(DATA_PATH, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
 
-countries = load_countries()
+def fetch_image(country_name):
+    # if no access key do nothing
+    if not UNSPLASH_ACCESS_KEY:
+        return {"image_url": "", "attribution_name": "", "attribution_url": ""}
+    url = f"https://api.unsplash.com/search/photos"
+    params = {
+        "query": country_name,
+        "per_page": 3,
+        "client_id": UNSPLASH_ACCESS_KEY
+    }
+    # make get request
+    res = requests.get(url, params=params)
+    if res.status_code == 200:
+        results = res.json().get('results')
+        if results and len(results) > 1:
+            # get first picture
+            image_url = results[1]['urls']['small']
+            photographer_name = results[1]['user']['name']
+            photographer_url = results[1]['user']['links']['html']
+            return {
+                "image_url": image_url,
+                "attribution_name": photographer_name,
+                "attribution_url": photographer_url
+            }
+    return {"image_url": "", "attribution_name": "", "attribution_url": ""}
 
 @app.route('/')
 @app.route("/home")
 def home():
     sort_method = request.args.get('sort', default='popular')
     filter_type = request.args.get('type', default='all')
+
+    countries = load_countries()
 
     # Filter by type
     if filter_type.lower() in ['country', 'city']:
@@ -40,6 +71,12 @@ def home():
     elif sort_method == 'popular':
         filtered.sort(key=lambda x: x.get('times_visited', 0), reverse=True)
 
+    #fetch image for each country
+    for country in filtered:
+        unsplash_data = fetch_image(country['name'])
+        country['image_url'] = unsplash_data['image_url']
+        country['attribution_name'] = unsplash_data['attribution_name']
+        country['attribution_url'] = unsplash_data['attribution_url']
     return jsonify(filtered)
 
 @app.route('/country/<country_code>')
