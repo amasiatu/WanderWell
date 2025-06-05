@@ -19,36 +19,37 @@ const [countries, setCountries] = useState([]);
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <Header />
+      <div style={{ marginTop: '20px', marginBottom: '20px', textAlign: 'center' }}>
+        <Header />
 
-      {/* Sort and Filter Controls */}
-      <div style={{ marginBottom: '20px',textAlign: 'center' }}>
-        <label htmlFor="sort">Sort Places By:</label>
-        <select
-          id="sort"
-          value={sortMethod}
-          onChange={(e) => setSortMethod(e.target.value)}
-          style={{ marginLeft: '10px' }}
-        >
-          <option value="popular">Most Popular</option>
-          <option value="az">A-Z</option>
-          <option value="za">Z-A</option>
-        </select>
+        {/* Sort and Filter Controls */}
+        <div style={{ marginBottom: '20px',textAlign: 'center' }}>
+          <label htmlFor="sort">Sort Places By:</label>
+          <select
+            id="sort"
+            value={sortMethod}
+            onChange={(e) => setSortMethod(e.target.value)}
+            style={{ marginLeft: '10px' }}
+          >
+            <option value="popular">Most Popular</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
 
-        <label htmlFor="filter" style={{ marginLeft: '30px' }}>
-          Filter by type of place:
-        </label>
-        <select
-          id="filter"
-          value={filterType}
-          onChange={(e) => setFilterType(e.target.value)}
-          style={{ marginLeft: '10px' }}
-        >
-          <option value="country">Country</option>
-          <option value="city">City</option>
-        </select>
+          <label htmlFor="filter" style={{ marginLeft: '30px' }}>
+            Filter by type of place:
+          </label>
+          <select
+            id="filter"
+            value={filterType}
+            onChange={(e) => setFilterType(e.target.value)}
+            style={{ marginLeft: '10px' }}
+          >
+            <option value="country">Country</option>
+            <option value="city">City</option>
+          </select>
+        </div>
       </div>
-
       {/* Country List */}
       <div
       style={{
@@ -69,6 +70,47 @@ const [countries, setCountries] = useState([]);
               backgroundColor: '#f9f9f9',
             }}
           >
+            {/* Render the country image */}
+            {country.image_url && (
+              <>
+                <img
+                  src={country.image_url}
+                  alt={`Scenery of ${country.name}`}
+                  style={{
+                    width: '100%',
+                    height: '120px',
+                    objectFit: 'cover',
+                    borderRadius: '5px',
+                    marginBottom: '10px',
+                  }}
+                />
+                {/* Attribution */}
+                {country.attribution_name && country.attribution_url && (
+                  <p style={{ fontSize: '0.8rem', marginTop: '5px' }}>
+                    Photo by{' '}
+                    <a
+                      href={country.attribution_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: '#007bff', textDecoration: 'none' }}
+                    >
+                      {country.attribution_name}
+                    </a>{' '}
+                    on{' '}
+                    <a
+                      href="https://unsplash.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: '#007bff', textDecoration: 'none' }}
+                    >
+                      Unsplash
+                    </a>
+                  </p>
+                )}
+              </>
+            )}
+              
+            {/* Render the country name */}
             {country.name}
           </div>
         ))}
