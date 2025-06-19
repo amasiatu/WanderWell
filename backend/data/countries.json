@@ -4,7 +4,7 @@
     "code": "MN",
     "language": "Mongolian",
     "avg_temp": "Unknown",
-    "currency": "Mongolian tögrög",
+    "currency": "Mongolian t\u00f6gr\u00f6g",
     "capital": "Ulan Bator",
     "region": "Asia",
     "passport_friendly": true,
@@ -44,7 +44,7 @@
     "code": "TO",
     "language": "English, Tongan",
     "avg_temp": "Unknown",
-    "currency": "Tongan paʻanga",
+    "currency": "Tongan pa\u02bbanga",
     "capital": "Nuku'alofa",
     "region": "Oceania",
     "passport_friendly": true,
@@ -165,7 +165,7 @@
     "language": "French",
     "avg_temp": "Unknown",
     "currency": "CFP franc",
-    "capital": "Nouméa",
+    "capital": "Noum\u00e9a",
     "region": "Oceania",
     "passport_friendly": true,
     "budget": "$$",
@@ -360,12 +360,12 @@
     "times_visited": 0
   },
   {
-    "name": "São Tomé and Príncipe",
+    "name": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
     "code": "ST",
     "language": "Portuguese",
     "avg_temp": "Unknown",
-    "currency": "São Tomé and Príncipe dobra",
-    "capital": "São Tomé",
+    "currency": "S\u00e3o Tom\u00e9 and Pr\u00edncipe dobra",
+    "capital": "S\u00e3o Tom\u00e9",
     "region": "Africa",
     "passport_friendly": true,
     "budget": "$$",
@@ -385,7 +385,7 @@
     "language": "Romanian",
     "avg_temp": "Unknown",
     "currency": "Moldovan leu",
-    "capital": "Chișinău",
+    "capital": "Chi\u0219in\u0103u",
     "region": "Europe",
     "passport_friendly": true,
     "budget": "$$",
@@ -680,7 +680,7 @@
     "times_visited": 0
   },
   {
-    "name": "Åland Islands",
+    "name": "\u00c5land Islands",
     "code": "AX",
     "language": "Swedish",
     "avg_temp": "Unknown",
@@ -817,7 +817,7 @@
     "tourist_attractions": [],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/ca.png",
-    "times_visited": 0
+    "times_visited": 1
   },
   {
     "name": "French Southern and Antarctic Lands",
@@ -825,7 +825,7 @@
     "language": "French",
     "avg_temp": "Unknown",
     "currency": "Euro",
-    "capital": "Port-aux-Français",
+    "capital": "Port-aux-Fran\u00e7ais",
     "region": "Antarctic",
     "passport_friendly": true,
     "budget": "$$",
@@ -897,7 +897,7 @@
     "tourist_attractions": [],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/bw.png",
-    "times_visited": 0
+    "times_visited": 1
   },
   {
     "name": "Mauritania",
@@ -925,7 +925,7 @@
     "language": "Berber, Hassaniya, Spanish",
     "avg_temp": "Unknown",
     "currency": "Algerian dinar, Moroccan dirham, Mauritanian ouguiya",
-    "capital": "El Aaiún",
+    "capital": "El Aai\u00fan",
     "region": "Africa",
     "passport_friendly": true,
     "budget": "$$",
@@ -945,7 +945,7 @@
     "language": "Chamorro, English, Spanish",
     "avg_temp": "Unknown",
     "currency": "United States dollar",
-    "capital": "Hagåtña",
+    "capital": "Hag\u00e5t\u00f1a",
     "region": "Oceania",
     "passport_friendly": true,
     "budget": "$$",
@@ -1505,7 +1505,7 @@
     "language": "French",
     "avg_temp": "Unknown",
     "currency": "West African CFA franc",
-    "capital": "Lomé",
+    "capital": "Lom\u00e9",
     "region": "Africa",
     "passport_friendly": true,
     "budget": "$$",
@@ -1582,7 +1582,7 @@
   {
     "name": "New Zealand",
     "code": "NZ",
-    "language": "English, Māori, New Zealand Sign Language",
+    "language": "English, M\u0101ori, New Zealand Sign Language",
     "avg_temp": "Unknown",
     "currency": "New Zealand dollar",
     "capital": "Wellington",
@@ -1645,7 +1645,7 @@
     "language": "English, French",
     "avg_temp": "Unknown",
     "currency": "Central African CFA franc",
-    "capital": "Yaoundé",
+    "capital": "Yaound\u00e9",
     "region": "Africa",
     "passport_friendly": true,
     "budget": "$$",
@@ -1662,7 +1662,7 @@
   {
     "name": "Cook Islands",
     "code": "CK",
-    "language": "English, Cook Islands Māori",
+    "language": "English, Cook Islands M\u0101ori",
     "avg_temp": "Unknown",
     "currency": "Cook Islands dollar, New Zealand dollar",
     "capital": "Avarua",
@@ -1877,14 +1877,14 @@
     "tourist_attractions": [],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/it.png",
-    "times_visited": 0
+    "times_visited": 11
   },
   {
     "name": "Uzbekistan",
     "code": "UZ",
     "language": "Russian, Uzbek",
     "avg_temp": "Unknown",
-    "currency": "Uzbekistani soʻm",
+    "currency": "Uzbekistani so\u02bbm",
     "capital": "Tashkent",
     "region": "Asia",
     "passport_friendly": true,
@@ -1984,8 +1984,8 @@
     "code": "FO",
     "language": "Danish, Faroese",
     "avg_temp": "Unknown",
-    "currency": "Danish krone, Faroese króna",
-    "capital": "Tórshavn",
+    "currency": "Danish krone, Faroese kr\u00f3na",
+    "capital": "T\u00f3rshavn",
     "region": "Europe",
     "passport_friendly": true,
     "budget": "$$",
@@ -2425,7 +2425,7 @@
     "language": "Portuguese",
     "avg_temp": "Unknown",
     "currency": "Brazilian real",
-    "capital": "Brasília",
+    "capital": "Bras\u00edlia",
     "region": "Americas",
     "passport_friendly": true,
     "budget": "$$",
@@ -2444,7 +2444,7 @@
     "code": "PL",
     "language": "Polish",
     "avg_temp": "Unknown",
-    "currency": "Polish złoty",
+    "currency": "Polish z\u0142oty",
     "capital": "Warsaw",
     "region": "Europe",
     "passport_friendly": true,
@@ -2465,7 +2465,7 @@
     "language": "Maldivian",
     "avg_temp": "Unknown",
     "currency": "Maldivian rufiyaa",
-    "capital": "Malé",
+    "capital": "Mal\u00e9",
     "region": "Asia",
     "passport_friendly": true,
     "budget": "$$",
@@ -2724,7 +2724,7 @@
     "code": "WS",
     "language": "English, Samoan",
     "avg_temp": "Unknown",
-    "currency": "Samoan tālā",
+    "currency": "Samoan t\u0101l\u0101",
     "capital": "Apia",
     "region": "Oceania",
     "passport_friendly": true,
@@ -3124,7 +3124,7 @@
     "code": "NI",
     "language": "Spanish",
     "avg_temp": "Unknown",
-    "currency": "Nicaraguan córdoba",
+    "currency": "Nicaraguan c\u00f3rdoba",
     "capital": "Managua",
     "region": "Americas",
     "passport_friendly": true,
@@ -3162,7 +3162,7 @@
   {
     "name": "Jersey",
     "code": "JE",
-    "language": "English, French, Jèrriais",
+    "language": "English, French, J\u00e8rriais",
     "avg_temp": "Unknown",
     "currency": "British pound, Jersey pound",
     "capital": "Saint Helier",
@@ -3205,7 +3205,7 @@
     "language": "Spanish",
     "avg_temp": "Unknown",
     "currency": "Colombian peso",
-    "capital": "Bogotá",
+    "capital": "Bogot\u00e1",
     "region": "Americas",
     "passport_friendly": true,
     "budget": "$$",
@@ -3364,7 +3364,7 @@
     "code": "VE",
     "language": "Spanish",
     "avg_temp": "Unknown",
-    "currency": "Venezuelan bolívar soberano",
+    "currency": "Venezuelan bol\u00edvar soberano",
     "capital": "Caracas",
     "region": "Americas",
     "passport_friendly": true,
@@ -3424,7 +3424,7 @@
     "code": "IS",
     "language": "Icelandic",
     "avg_temp": "Unknown",
-    "currency": "Icelandic króna",
+    "currency": "Icelandic kr\u00f3na",
     "capital": "Reykjavik",
     "region": "Europe",
     "passport_friendly": true,
@@ -3461,7 +3461,7 @@
   },
   {
     "name": "United States",
-    "code": "US",
+    "code":"US",
     "language": "English",
     "avg_temp": "Unknown",
     "currency": "United States dollar",
@@ -3477,7 +3477,7 @@
     "tourist_attractions": [],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/us.png",
-    "times_visited": 0
+    "times_visited": 10
   },
   {
     "name": "Trinidad and Tobago",
@@ -3544,8 +3544,8 @@
     "code": "CR",
     "language": "Spanish",
     "avg_temp": "Unknown",
-    "currency": "Costa Rican colón",
-    "capital": "San José",
+    "currency": "Costa Rican col\u00f3n",
+    "capital": "San Jos\u00e9",
     "region": "Americas",
     "passport_friendly": true,
     "budget": "$$",
@@ -3804,7 +3804,7 @@
     "code": "VN",
     "language": "Vietnamese",
     "avg_temp": "Unknown",
-    "currency": "Vietnamese đồng",
+    "currency": "Vietnamese \u0111\u1ed3ng",
     "capital": "Hanoi",
     "region": "Asia",
     "passport_friendly": true,
@@ -3842,7 +3842,7 @@
   {
     "name": "Guernsey",
     "code": "GG",
-    "language": "English, French, Guernésiais",
+    "language": "English, French, Guern\u00e9siais",
     "avg_temp": "Unknown",
     "currency": "British pound, Guernsey pound",
     "capital": "St. Peter Port",
@@ -3905,7 +3905,7 @@
     "language": "French",
     "avg_temp": "Unknown",
     "currency": "CFP franc",
-    "capital": "Papeetē",
+    "capital": "Papeet\u0113",
     "region": "Oceania",
     "passport_friendly": true,
     "budget": "$$",
@@ -4037,7 +4037,7 @@
     "tourist_attractions": [],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/ng.png",
-    "times_visited": 0
+    "times_visited": 6
   },
   {
     "name": "Libya",
@@ -4102,10 +4102,10 @@
   {
     "name": "Paraguay",
     "code": "PY",
-    "language": "Guaraní, Spanish",
+    "language": "Guaran\u00ed, Spanish",
     "avg_temp": "Unknown",
-    "currency": "Paraguayan guaraní",
-    "capital": "Asunción",
+    "currency": "Paraguayan guaran\u00ed",
+    "capital": "Asunci\u00f3n",
     "region": "Americas",
     "passport_friendly": true,
     "budget": "$$",
@@ -4180,7 +4180,7 @@
     "times_visited": 0
   },
   {
-    "name": "Réunion",
+    "name": "R\u00e9union",
     "code": "RE",
     "language": "French",
     "avg_temp": "Unknown",
@@ -4402,7 +4402,7 @@
   {
     "name": "Bolivia",
     "code": "BO",
-    "language": "Aymara, Guaraní, Quechua, Spanish",
+    "language": "Aymara, Guaran\u00ed, Quechua, Spanish",
     "avg_temp": "Unknown",
     "currency": "Bolivian boliviano",
     "capital": "Sucre",
@@ -4440,7 +4440,7 @@
     "times_visited": 0
   },
   {
-    "name": "DR Congo",
+    "name": "Democratic Republic of Congo",
     "code": "CD",
     "language": "French, Kikongo, Lingala, Tshiluba, Swahili",
     "avg_temp": "Unknown",
@@ -4457,12 +4457,12 @@
     "tourist_attractions": [],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/cd.png",
-    "times_visited": 0
+    "times_visited": 1
   },
   {
     "name": "Argentina",
     "code": "AR",
-    "language": "Guaraní, Spanish",
+    "language": "Guaran\u00ed, Spanish",
     "avg_temp": "Unknown",
     "currency": "Argentine peso",
     "capital": "Buenos Aires",
@@ -4520,7 +4520,7 @@
     "times_visited": 0
   },
   {
-    "name": "Curaçao",
+    "name": "Cura\u00e7ao",
     "code": "CW",
     "language": "English, Dutch, Papiamento",
     "avg_temp": "Unknown",
@@ -4642,7 +4642,7 @@
   {
     "name": "Norway",
     "code": "NO",
-    "language": "Norwegian Nynorsk, Norwegian Bokmål, Sami",
+    "language": "Norwegian Nynorsk, Norwegian Bokm\u00e5l, Sami",
     "avg_temp": "Unknown",
     "currency": "Norwegian krone",
     "capital": "Oslo",
@@ -4940,7 +4940,7 @@
     "times_visited": 0
   },
   {
-    "name": "Saint Barthélemy",
+    "name": "Saint Barth\u00e9lemy",
     "code": "BL",
     "language": "French",
     "avg_temp": "Unknown",

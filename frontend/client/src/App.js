@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import Header from './components/header';
+import ireland from './assets/ireland.jpg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MapPage from './MapPage';
+
 
 function App() {
 const [countries, setCountries] = useState([]);
@@ -18,10 +22,33 @@ const [countries, setCountries] = useState([]);
   }, [sortMethod, filterType]);
 
   return (
+    <Router>
+    <Routes>
+      {/* Home page */}
+      <Route path="/" element={
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <div style={{ marginTop: '20px', marginBottom: '20px', textAlign: 'center' }}>
         <Header />
-
+        <img
+                src={ireland}
+                alt="Explore WanderWell"
+                style={{ width: '100%', height: '400px', objectFit: 'cover' }}
+              />
+              <h1
+                style={{
+                  position: 'absolute',
+                  bottom: '38%',
+                  left: '27%',
+                  transform: 'translate(-50%, -50%)',
+                  color: 'white',
+                  fontSize: '45px',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
+                  margin: 0,
+                  padding: '0 10px'
+                }}
+              >
+                Explore places on WanderWell
+              </h1>
         {/* Sort and Filter Controls */}
         <div style={{ marginBottom: '20px',textAlign: 'center' }}>
           <label htmlFor="sort">Sort Places By:</label>
@@ -83,39 +110,21 @@ const [countries, setCountries] = useState([]);
                     borderRadius: '5px',
                     marginBottom: '10px',
                   }}
-                />
-                {/* Attribution */}
-                {country.attribution_name && country.attribution_url && (
-                  <p style={{ fontSize: '0.8rem', marginTop: '5px' }}>
-                    Photo by{' '}
-                    <a
-                      href={country.attribution_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: '#007bff', textDecoration: 'none' }}
-                    >
-                      {country.attribution_name}
-                    </a>{' '}
-                    on{' '}
-                    <a
-                      href="https://unsplash.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: '#007bff', textDecoration: 'none' }}
-                    >
-                      Unsplash
-                    </a>
-                  </p>
-                )}
+                />             
               </>
             )}
-              
             {/* Render the country name */}
             {country.name}
           </div>
         ))}
       </div>
     </div>
+    } />
+
+      {/* Map page */}
+      <Route path="/map" element={<MapPage />} />
+    </Routes>
+  </Router>
       );
 }
 export default App
