@@ -17,6 +17,10 @@ DATA_PATH = '../data/countries.json'
 def load_countries():
     with open(DATA_PATH, 'r', encoding='utf-8') as f:
         return json.load(f)
+    
+
+ #global variable countries   
+countries = load_countries()
 
 # Save country data to JSON file
 def save_countries(data):
@@ -26,7 +30,7 @@ def save_countries(data):
 def fetch_image(country_name):
     # if no access key do nothing
     if not UNSPLASH_ACCESS_KEY:
-        return {"image_url": "", "attribution_name": "", "attribution_url": ""}
+        return {"image_url": ""}
     url = f"https://api.unsplash.com/search/photos"
     params = {
         "query": country_name,
@@ -39,23 +43,18 @@ def fetch_image(country_name):
         results = res.json().get('results')
         if results and len(results) > 1:
             # get first picture
-            image_url = results[1]['urls']['small']
-            photographer_name = results[1]['user']['name']
-            photographer_url = results[1]['user']['links']['html']
+            image_url = results[2]['urls']['small']
             return {
                 "image_url": image_url,
-                "attribution_name": photographer_name,
-                "attribution_url": photographer_url
             }
-    return {"image_url": "", "attribution_name": "", "attribution_url": ""}
+    return {"image_url": ""}
+
 
 @app.route('/')
 @app.route("/home")
 def home():
     sort_method = request.args.get('sort', default='popular')
     filter_type = request.args.get('type', default='all')
-
-    countries = load_countries()
 
     # Filter by type
     if filter_type.lower() in ['country', 'city']:
@@ -73,24 +72,26 @@ def home():
 
     #fetch image for each country
     for country in filtered:
-        unsplash_data = fetch_image(country['name'])
+        primary_name = country.get('name')
+        unsplash_data = fetch_image(primary_name)
         country['image_url'] = unsplash_data['image_url']
-        country['attribution_name'] = unsplash_data['attribution_name']
-        country['attribution_url'] = unsplash_data['attribution_url']
     return jsonify(filtered)
 
-@app.route('/country/<country_code>')
-def country_page(country_code):
-    global countries
+
+
+@app.route('/country/<identifier>')
+def country_page(identifier):
     found = False
 
     for country in countries:
-        if country["code"].lower() == country_code.lower():
-            # for sorting functionality
-            country["times_visited"] = country.get("times_visited", 0) + 1
-            save_countries(countries)
-            found = True
-            return jsonify(country)
+        country["times_visited"] = country.get("times_visited", 0) + 1
+        save_countries(countries)
+        found = True
+        # fetch Unsplash image
+        primary_name = country.get('name')
+        unsplash_data = fetch_image(primary_name)
+        country['image_url'] = unsplash_data['image_url']
+        return jsonify(country)
 
     if not found:
         return jsonify({"error": "Country not found"}), 404
@@ -98,7 +99,13 @@ def country_page(country_code):
 
 @app.route('/map')
 def map_page():
-    return render_template('map.html', countries=countries)
+    GEOJSON_URL = "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson"
+    response = requests.get(GEOJSON_URL)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return jsonify({"error": "Failed to fetch GeoJSON"}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=5000)
