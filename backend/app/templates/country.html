@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ country.name }} | WanderWell</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      text-align: left;
+      margin-top: 45px;
+      padding: 20px;
+      background: white;
+      border-bottom: 2px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    header .logo-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+    }
+
+    header .logo-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    header .controls {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header input[type="text"] {
+      padding: 0.5rem;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      width: 200px;
+      font-size: 1rem;
+    }
+
+    header button {
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+      background-color: #2a4dc4;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* Push the map-link all the way to the right */
+    header a.map-link {
+      margin-left: auto;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    header a.map-link:hover {
+      text-decoration: underline;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .country-name {
+      text-align: left;
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2a4dc4;
+    }
+
+    .info-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 1rem 2rem;
+    }
+
+    .info-box {
+      background: #e6e9f7;
+      padding: 1.5rem;
+      border-radius: 20px;
+      width: 300px;
+      margin: 1rem;
+    }
+
+    .info-box p {
+      margin: 0.5rem 0;
+    }
+
+    .info-box strong {
+      display: inline-block;
+      width: 160px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img
+      src="{{ url_for('static', filename='assets/logo.png') }}"
+      alt="WanderWell Logo"
+    />
+  </div>
+
+  <div class="controls">
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Search for a country"
+      aria-label="Search for a country"
+    />
+    <button onclick="searchCountry()">Search</button>
+
+    <a href="{{ url_for('map_page') }}" class="map-link">Interactive Map</a>
+  </div>
+</header>
+
+<div class="banner">
+  <img src="{{ country.image_url }}" alt="Flag of {{ country.name }}" />
+</div>
+
+<div class="country-name">{{ country.name }}</div>
+
+<div class="info-section">
+  <div class="info-box">
+    <p><strong>Code:</strong> {{ country.code }}</p>
+    <p><strong>Language:</strong> {{ country.language }}</p>
+    <p><strong>Average Temperature:</strong> {{ country.avg_temp }}</p>
+    <p><strong>Currency:</strong> {{ country.currency }}</p>
+    <p><strong>Capital:</strong> {{ country.capital }}</p>
+    <p><strong>Region:</strong> {{ country.region }}</p>
+  </div>
+
+  <div class="info-box">
+    <p><strong>Passport validity:</strong> {{ country.passport_friendly }}</p>
+    <p><strong>Currency Restriction for Entry:</strong> {{ country.budget }}</p>
+    <p><strong>Transport friendly:</strong> {{ "YES" if country.transport_friendly else "NO" }}</p>
+    <p>
+      <strong>Safe Areas:</strong>
+      {{ country.safety.safe_areas | join(', ') if country.safety.safe_areas else "..." }}
+    </p>
+    <p>
+      <strong>Unsafe Areas:</strong>
+      {{ country.safety.unsafe_areas | join(', ') if country.safety.unsafe_areas else "..." }}
+    </p>
+  </div>
+</div>
+
+<script>
+  function searchCountry() {
+    const input = document.getElementById('search-input').value.trim();
+    if (input) {
+      // Redirect to country page by code or name (adjust if your URL uses codes)
+      window.location.href = `/country/${input}`;
+    }
+  }
+</script>
+
+</body>
+</html>

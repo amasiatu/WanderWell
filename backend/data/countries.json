@@ -83,18 +83,18 @@
     "name": "Sweden",
     "code": "SE",
     "language": "Swedish",
-    "avg_temp": "Unknown",
+    "avg_temp": "46°F",
     "currency": "Swedish krona",
     "capital": "Stockholm",
     "region": "Europe",
-    "passport_friendly": true,
-    "budget": "$$",
-    "food": [],
+    "passport_friendly": "Must be valid at least three months beyond the period of stay",
+    "budget": "$$$",
+    "food": ["Swedish meatballs", "Gravlax", "Pickled herring", "Kanelbulle"],
     "safety": {
-      "safe_areas": [],
-      "unsafe_areas": []
+      "safe_areas": ["Öckerö", "Lomma", "Hammarö"],
+      "unsafe_areas": ["Stockholm", "Gothenburg", "Malmo"]
     },
-    "tourist_attractions": [],
+    "tourist_attractions": ["Vasa Museum", "Skansen", "Liseberg"],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/se.png",
     "times_visited": 0
@@ -1863,21 +1863,22 @@
     "name": "Italy",
     "code": "IT",
     "language": "Italian, Catalan",
-    "avg_temp": "Unknown",
+    "avg_temp": "60°F",
     "currency": "Euro",
     "capital": "Rome",
     "region": "Europe",
-    "passport_friendly": true,
+    "passport_friendly": "Must be valid for at least 3 months beyond your planned date of departure",
     "budget": "$$",
-    "food": [],
+    "food": ["Lasagna", "Risotta","Tiramisu", "Carbonara"],
     "safety": {
-      "safe_areas": [],
-      "unsafe_areas": []
+      "safe_areas": ["Florence", "Verona", "Rome"],
+      "unsafe_areas": ["Venice", "Milan", "Naples"]
     },
-    "tourist_attractions": [],
+    "tourist_attractions": ["Colosseum", "Trevi Fountain", "Saint Peter's Basilica"],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/it.png",
-    "times_visited": 11
+    "times_visited": 26
+
   },
   {
     "name": "Uzbekistan",
@@ -2023,18 +2024,18 @@
     "name": "India",
     "code": "IN",
     "language": "English, Hindi, Tamil",
-    "avg_temp": "Unknown",
+    "avg_temp": "76°F",
     "currency": "Indian rupee",
     "capital": "New Delhi",
     "region": "Asia",
-    "passport_friendly": true,
-    "budget": "$$",
-    "food": [],
+    "passport_friendly": "Must be valid for 6 months past the date of visa application",
+    "budget": "$",
+    "food": ["Palak Paneer", "Butter chicken", "Biryani", "Naan"],
     "safety": {
-      "safe_areas": [],
-      "unsafe_areas": []
+      "safe_areas": ["Kolkata", "Chennai", "Pondicherry"],
+      "unsafe_areas": ["Jammu", "Kashimir", "Manipur"]
     },
-    "tourist_attractions": [],
+    "tourist_attractions": ["Taj Mahal", "Amber Palace", "Sri Harmandir Sahib"],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/in.png",
     "times_visited": 0
@@ -3043,18 +3044,18 @@
     "name": "Algeria",
     "code": "DZ",
     "language": "Arabic",
-    "avg_temp": "Unknown",
+    "avg_temp": "65°F",
     "currency": "Algerian dinar",
     "capital": "Algiers",
     "region": "Africa",
-    "passport_friendly": true,
-    "budget": "$$",
-    "food": [],
+    "passport_friendly": "Must be valid for at least 6 months",
+    "budget": "$",
+    "food": ["Couscous", "Chakhchoukha","Chorba frik"],
     "safety": {
-      "safe_areas": [],
-      "unsafe_areas": []
+      "safe_areas": ["Constantine", "Oran", "Bejaia"],
+      "unsafe_areas": ["Djanet distric", "Illizi province", "Tamanrasset province"]
     },
-    "tourist_attractions": [],
+    "tourist_attractions": ["Martyrs Memorial", "Botanical Garden Hamma", "Church of Notre Dame d'Afrique"],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/dz.png",
     "times_visited": 0
@@ -3461,7 +3462,7 @@
   },
   {
     "name": "United States",
-    "code":"US",
+    "code": "US",
     "language": "English",
     "avg_temp": "Unknown",
     "currency": "United States dollar",
@@ -3477,7 +3478,7 @@
     "tourist_attractions": [],
     "transport_friendly": true,
     "image_url": "https://flagcdn.com/w320/us.png",
-    "times_visited": 10
+    "times_visited": 12
   },
   {
     "name": "Trinidad and Tobago",

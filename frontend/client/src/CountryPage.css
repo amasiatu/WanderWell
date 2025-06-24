@@ -1,0 +1,113 @@
+/* General body styling */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; /* Light grey background */
+}
+
+/* Header styling (assuming Header component handles its own styling, but basic reset/margin if needed) */
+/* If you want the header to be fixed or have specific height/width */
+.header {
+    /* Add any header specific styles here, e.g., background, padding */
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Main content container for the country page */
+.country-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+}
+
+/* Country flag image */
+.country-page img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin-bottom: 10px; /* Space below image to separate from country name */
+    border-radius: 8px; /* Slightly rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Country name heading */
+.country-page h1 {
+    font-size: 3em; /* Larger font size for the country name */
+    color: #333;
+    margin-top: 0; /* Remove top margin to sit close under image */
+    margin-bottom: 30px;
+    text-align: left; /* Align to the left as in the image */
+}
+
+/* Container for the info boxes */
+.info-container {
+    display: flex;
+    justify-content: space-between; /* Puts space between the boxes */
+    gap: 30px; /* Space between the two columns */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+/* Common styling for the info boxes */
+.info-box {
+    background-color: #e0f2f7; /* Light blue background for boxes */
+    padding: 30px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    flex: 1; /* Allows boxes to grow and shrink */
+    min-width: 300px; /* Minimum width before wrapping */
+    margin-bottom: 20px; /* Space below boxes on wrap */
+}
+
+/* Styling for individual info items within the boxes */
+.info-item {
+    margin-bottom: 15px; /* Space between each info line */
+}
+
+.info-item:last-child {
+    margin-bottom: 0; /* No margin for the last item */
+}
+
+.info-item strong {
+    display: block; /* Makes the label go to the next line */
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px; /* Space between label and value */
+}
+
+.info-item span {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Specific styling for the budget (dollar signs) */
+.info-item.budget span {
+    font-size: 1.5em; /* Larger font for budget */
+    color: #28a745; /* Green color for budget */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column; /* Stack boxes vertically on small screens */
+        gap: 20px;
+    }
+
+    .country-page h1 {
+        font-size: 2.5em; /* Adjust heading size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .country-page {
+        padding: 15px;
+    }
+
+    .info-box {
+        padding: 20px;
+    }
+
+    .country-page h1 {
+        font-size: 2em;
+    }
+}
