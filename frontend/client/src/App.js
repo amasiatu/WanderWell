@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header'; // Capitalized to match actual filename
+import Header from './components/header'; // Capitalized to match actual filename
 import ireland from './assets/ireland.jpg';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import MapPage from './MapPage';
@@ -59,8 +59,8 @@ function App() {
                   <h1
                     style={{
                       position: 'absolute',
-                      bottom: '20%',
-                      left: '50%',
+                      bottom: '80px',
+                      left: '350px',
                       transform: 'translate(-50%, 0)',
                       color: 'white',
                       fontSize: '45px',

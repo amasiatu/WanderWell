@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
-import Header from './components/Header';
+import Header from './components/header';
 
 const MapPage = () => {
   const [geoData, setGeoData] = useState(null);
