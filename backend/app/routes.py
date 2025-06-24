@@ -56,6 +56,8 @@ def home():
     sort_method = request.args.get('sort', default='popular')
     filter_type = request.args.get('type', default='all')
 
+    countries = load_countries()
+
     # Filter by type
     if filter_type.lower() in ['country', 'city']:
         filtered = [c for c in countries if c.get('type', 'country').lower() == filter_type.lower()]
