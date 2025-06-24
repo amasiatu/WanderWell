@@ -12,7 +12,7 @@ load_dotenv()
 UNSPLASH_ACCESS_KEY = os.environ.get('UNSPLASH_ACCESS_KEY')
 
 
-DATA_PATH = 'backend/data/countries.json'
+DATA_PATH = '../data/countries.json'
 
 # Load country data from JSON file
 def load_countries():
